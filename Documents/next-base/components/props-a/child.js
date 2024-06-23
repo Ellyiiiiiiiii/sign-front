@@ -1,5 +1,21 @@
 import React from 'react'
 
+// export default function Child(props) {
+//   console.log(props)
+
+//   return (
+//     <>
+//       <h3>Child</h3>
+//       <p>title={props.title}</p>
+//       <p>price={props.price}</p>
+//       <p>isConnected={props.isConnected ? 'true' : 'false'}</p>
+//       <p>aa={JSON.stringify(props.aa)}</p>
+//       <p>oa={JSON.stringify(props.oa)}</p>
+//       <p>sum(1,2)={props.sum(1, 2)}</p>
+//     </>
+//   )
+// }
+
 // 子女元件可以從函式的傳入參數值得到父母傳來的值
 // props必定是一個物件
 // 在傳入參數值解構提取所有屬性成為變數名(注意，一定要加花括號{}才是解構語法)

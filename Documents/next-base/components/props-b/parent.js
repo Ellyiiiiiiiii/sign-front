@@ -13,7 +13,7 @@ export default function Parent() {
       {/* P -> C */}
       <ChildA pData={pData} />
       <p>來自子女Ｂ的資料： {dataFromChild}</p>
-      {/* C -> P專用的傳送資料的狀態設定函式 */}
+      {/* C -> P專用的傳送資料的狀態設定函式  */}
       <ChildB setDataFromChild={setDataFromChild} />
     </>
   )
