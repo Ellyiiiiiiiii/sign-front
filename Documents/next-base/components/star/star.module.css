@@ -1,0 +1,20 @@
+.on {
+  /* 用css變數來套用元件中動態fillColor屬性值 */
+  color: var(--fill-color);
+}
+
+.off {
+  /* 用css變數來套用元件中動態emptyColor屬性值 */
+  color: var(--empty-color);
+}
+
+.goodStyle{
+  color:red;
+}
+
+.starBtn{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

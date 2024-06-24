@@ -20,7 +20,7 @@ export default function ChildB({ setDataFromChild }) {
           // 正確的第1種作法: 利用事件處函式執行
           setDataFromChild(cData)
         }}
-      >送資料給父母元件</button>
+      >送資料給子女A元件</button>
     </>
   )
 }
