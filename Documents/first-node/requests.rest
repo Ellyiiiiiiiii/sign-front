@@ -1,0 +1,18 @@
+
+
+GET http://localhost:3001
+
+### 分隔線 ------------------------
+
+
+POST http://localhost:3001/try-post
+Content-Type: application/x-www-form-urlencoded
+
+name=艾利&address=台南市
+
+### 分隔線 ------------------------
+
+POST http://localhost:3001/try-post
+Content-Type: application/json
+
+{"name": "利絲", "address":"台南市"}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>上傳圖片</title>
+  </head>
+  <body>
+    <form onsubmit="return false">
+      <input type="file" name="avatar" />
+    </form>
+    <img src="" alt="" id="preview">
+    <script>
+      const avatar = document.forms[0].avatar;
+
+      avatar.addEventListener('change', e => {
+        console.log(avatar.files[0]); // 選取的第一個檔案
+
+        // 同步的方式，取得 url
+        // 資料會暫存於瀏覽器內
+        const url = URL.createObjectURL(avatar.files[0]);
+        preview.src = url;
+      });
+      
+    </script>
+  </body>
+</html>

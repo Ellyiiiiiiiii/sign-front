@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>上傳圖片</title>
+  </head>
+  <body>
+    <form onsubmit="return false">
+      <input type="file" name="avatar" multiple />
+    </form>
+    <div id="previews"></div>
+    <script>
+      const avatar = document.forms[0].avatar;
+      const previews = document.getElementById("previews");
+
+      avatar.addEventListener("change", (e) => {
+        // 清空之前預覽
+        previews.innerHTML = '';
+
+        // 遍歷選取的所有檔案
+        Array.from(avatar.files).forEach((file) => {
+          // 建立新的 FileReader 來讀取檔案
+          const reader = new FileReader();
+          reader.addEventListener('load', event => {
+            // 為每個檔案建立新的 img 標籤
+            const img = document.createElement('img');
+            img.src = event.target.result;
+            img.alt = file.name;
+            img.style.maxWidth = "200px"; // 設定預覽圖片的寬度
+            img.style.margin = "10px"; // 設定圖片間距
+  
+            // 將 img 標籤添加到 previews div
+            previews.appendChild(img);
+          });
+        });
+        // 開始讀取
+        reader.readAsDataURL(file);
+      });
+    </script>
+  </body>
+</html>

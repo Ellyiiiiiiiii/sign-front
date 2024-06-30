@@ -1,0 +1,1 @@
+console.log(process.argv); //不是web server, 用node查看即可

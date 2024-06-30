@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>解構賦值</title>
+</head>
+<body>
+  <script>
+    // 物件
+    c = {name: "bill", age: 40};
+    const {age} = c;
+    console.log({age});
+    // 
+    const b = [2,3,4,5,6,9,12];
+    const [x,y, ...z] = b; // ...其餘運算子
+    console.log({x,y,z});
+    // 
+    const c= [30, ...b, 10,20]; // ...展開運算子
+    console.log(c);
+
+    const f = (...a)=> a.reduce((a,v)=>a+v, 0);
+
+    console.log('f():', f(1,2,3,4,5));
+    console.log('f():', f(...b));
+    console.log(Math.max(...b)); // ...展開運算子
+  </script>
+</body>
+</html>

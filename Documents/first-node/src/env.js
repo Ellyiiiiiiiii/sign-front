@@ -1,0 +1,1 @@
+console.log(process.env); //不是web server, 用node查看即可
