@@ -1,0 +1,165 @@
+.l-navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  width: 100%;
+  padding-left: 4vw;
+  background-color: var(--color-black);
+  border-bottom: 1px solid var(--color-primary);
+  -webkit-box-shadow: 0 4px 60px var(--color-primary);
+          box-shadow: 0 4px 60px var(--color-primary);
+  z-index: 999;
+}
+.lNavbarLogoMask {
+  width: 20rem;
+  -webkit-filter: drop-shadow(0 0 10px red);
+          filter: drop-shadow(0 0 10px red);
+}
+.l-navbar__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.l-navbar__body {
+  margin-left: auto;
+}
+.l-navbar__btn-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.l-navbar__btn-box.--icon .l-navbar__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 1.4vw;
+  padding-right: 1.4vw;
+}
+.l-navbar__btn-box.--icon .l-navbar__btn::before, .l-navbar__btn-box.--icon .l-navbar__btn::after {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--color-secondary)), to(transparent));
+  background-image: linear-gradient(to bottom, var(--color-secondary), transparent);
+}
+.l-navbar__btn {
+  height: 100%;
+  /* 為了讓按鈕左右 padding 隨螢幕縮小，所以使用 vw
+  * 通常 vw 單位是 px 單位除以 20
+  * 所以 60px 的設計就會是 3vw */
+  padding: 2.8rem 3vw;
+  color: var(--color-white);
+  line-height: 1.2;
+  z-index: 10;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.l-navbar__btn:hover::after {
+  opacity: 1;
+}
+.l-navbar__btn::before, .l-navbar__btn::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+.l-navbar__btn::before {
+  width: 1px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--color-gray-mid)), to(transparent));
+  background-image: linear-gradient(to bottom, var(--color-gray-mid), transparent);
+}
+.l-navbar__btn::after {
+  width: 100%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--color-primary)), to(transparent));
+  background-image: linear-gradient(to bottom, var(--color-primary), transparent);
+  z-index: -1;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.l-navbar__burger {
+  display: none;
+}
+@media (max-width: 1600px) {
+  .l-navbar__btn {
+    padding-left: 2.4vw;
+    padding-right: 2.4vw;
+  }
+}
+@media (max-width: 1399.98px) {
+  .l-navbar {
+    padding: var(--spacing-16) 4vw;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .l-navbar.is-opened .l-navbar__body {
+    height: 100%;
+  }
+  .l-navbar__body {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 0;
+    background-color: var(--color-black-80);
+    overflow: hidden;
+    -webkit-transition: height 0.7s;
+    transition: height 0.7s;
+  }
+  .l-navbar__menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 0 6vw;
+    height: 100vh;
+  }
+  .l-navbar__btn-wrap:first-child .l-navbar__btn::before {
+    display: none;
+  }
+  .l-navbar__btn-box.--icon .l-navbar__btn::before {
+    display: none;
+  }
+  .l-navbar__burger {
+    display: block;
+  }
+}
+@media (max-width: 767.98px) {
+  .l-navbar__btn-box.--link {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  .l-navbar__btn-box.--icon {
+    margin-top: var(--spacing-40);
+  }
+  .l-navbar__btn {
+    padding: var(--spacing-16) 4vw;
+  }
+  .l-navbar__btn:before {
+    display: none;
+  }
+}
