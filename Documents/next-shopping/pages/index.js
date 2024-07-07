@@ -1,85 +1,69 @@
-import React from 'react'
-// import Image from 'next/image'
-import styles from '@/styles/index.module.css'
+import React from 'react';
 
 export default function Index() {
+  React.useEffect(() => {
+    // 引入 script.js
+    const script = document.createElement('script');
+    script.src = '/assets/js/script.js';
+    script.defer = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
-    <>
-      <nav className="l-navbar">
-        <a className="l-navbar__logo-mask" href="index.html">
-          In Shopping logo
-        </a>
-        <div className="l-navbar__body">
-          <div className="l-navbar__menu">
-            <ul className="l-navbar__btn-box --link">
-              <li className="l-navbar__btn-wrap">
-                <a className="l-navbar__btn" href="##">
-                  <span className="u-ff-en u-text-lg">HOT </span>
-                  <span>熱銷 </span>
-                </a>
-              </li>
-              <li className="l-navbar__btn-wrap">
-                <a className="l-navbar__btn" href="##">
-                  <span className="u-ff-en u-text-lg">HI-TECH </span>
-                  <span>電子產品</span>
-                </a>
-              </li>
-              <li className="l-navbar__btn-wrap">
-                <a className="l-navbar__btn" href="##">
-                  <span className="u-ff-en u-text-lg">SPORT </span>
-                  <span>運動健身</span>
-                </a>
-              </li>
-              <li className="l-navbar__btn-wrap">
-                <a className="l-navbar__btn" href="##">
-                  <span className="u-ff-en u-text-lg">HOUSEHOLD </span>
-                  <span>日常好物</span>
-                </a>
-              </li>
-              <li className="l-navbar__btn-wrap">
-                <a className="l-navbar__btn" href="##">
-                  <span className="u-ff-en u-text-lg">ON SALE </span>
-                  <span>特價</span>
-                </a>
-              </li>
-            </ul>
-            <ul className="l-navbar__btn-box --icon">
-              <li className="l-navbar__btn-wrap">
-                <a className="l-navbar__btn" href="##" target="_blank">
-                  <iconify-icon className="u-icon --md" icon="bxs:user" />
-                </a>
-              </li>
-              <li className="l-navbar__btn-wrap">
-                <a className="l-navbar__btn" href="##" target="_blank">
-                  <iconify-icon className="u-icon --md" icon="mdi:register" />
-                </a>
-              </li>
-              <li className="l-navbar__btn-wrap">
-                <a className="l-navbar__btn" href="##" target="_blank">
-                  <iconify-icon
-                    className="u-icon --md"
-                    icon="clarity:shopping-cart-solid"
-                  />
-                </a>
-              </li>
+    <div>
+      {/* 将 index.html 的内容转为 JSX 语法并放置在此 */}
+      <header className="header">
+        <div className="header__container">
+          <div className="header__logo">
+            <a href="#">
+              <img src="assets/images/logo.png" alt="Logo" />
+            </a>
+          </div>
+          <div className="header__nav">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Contact</a></li>
             </ul>
           </div>
         </div>
-        <div className="l-navbar__burger">
-          <div className="o-burger" onclick="toggleNavbar()">
-            <div className="o-burger__wrap">
-              <div className="o-burger__line" />
-              <div className="o-burger__line" />
-              <div className="o-burger__line" />
-            </div>
+      </header>
+      <main className="main">
+        <section className="hero">
+          <div className="hero__content">
+            <h1>Welcome to Our Website</h1>
+            <p>Your success is our priority</p>
+            <a href="#" className="hero__cta">Get Started</a>
           </div>
+        </section>
+        <section className="features">
+          <div className="feature">
+            <h2>Feature One</h2>
+            <p>Description of feature one.</p>
+          </div>
+          <div className="feature">
+            <h2>Feature Two</h2>
+            <p>Description of feature two.</p>
+          </div>
+          <div className="feature">
+            <h2>Feature Three</h2>
+            <p>Description of feature three.</p>
+          </div>
+        </section>
+        <div className="l-banner__swiper">
+          {/* 轮播图的内容 */}
         </div>
-      </nav>
-      <style jsx>
-        {`
-          
-        `}
-      </style>
-    </>
-  )
+      </main>
+      <footer className="footer">
+        <div className="footer__container">
+          <p>&copy; 2024 Your Company. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+  );
 }
