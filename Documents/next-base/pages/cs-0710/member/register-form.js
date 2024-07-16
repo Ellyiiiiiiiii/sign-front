@@ -18,7 +18,7 @@ export default function RegisterForm() {
     username: '',
     password: '',
     confirmPassword: '',
-    agree: '', // 錯誤訊息用字串
+    agree: '', // 呈現錯誤訊息用字串
   })
 
   // checkbox 呈現密碼用
@@ -95,7 +95,7 @@ export default function RegisterForm() {
 
     // 最後檢查完全沒問題才送到伺服器(ajax/fetch)
     try {
-      // const url = 'http://localhost:3005/api/members'
+      const url = 'http://localhost:3005/api/members'
       const res = await fetch(url, {
         method: 'POST',
         headers: {
@@ -219,6 +219,9 @@ export default function RegisterForm() {
               confirmPassword: '',
               agree: false,
             })
+            
+            setShowPassword(false)
+            setShowConfirmPassword(false)
           }}
         >
           重置
@@ -245,7 +248,6 @@ export default function RegisterForm() {
           .error {
             color: red;
             font-size: 12px;
-            height:16px;
           }
         `}
       </style>
